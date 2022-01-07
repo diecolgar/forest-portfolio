@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/* scroll-behavior: auto; */
+}
+
+body {
+	font-family: 'Jost', sans-serif;
+	overflow-x: hidden;
+	/* background-color: black; */
+}
+
+.bodybackground {
+	background: linear-gradient(
+			0deg,
+			rgb(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.8) 20%,
+			rgba(0, 0, 0, 0.6) 100%
+		),
+		url('img/forestwallpaper.png');
+	background-position: left;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #131313;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 255, 255);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(107, 107, 107);
+}
+
+/* ----------- DISPLAY ------------ */
+
+/* --- NAVIGATION BAR --- */
+nav {
+	margin: 0.5rem 15%;
+	height: 2.5rem;
+	width: 75%;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	opacity: 0;
+	transition: ease-in-out 0.5s;
+}
+
+/* Left Side */
+nav .logo {
+	display: flex;
+	align-items: center;
+}
+
+nav .logo p {
+	font-size: 1.4rem;
+	color: rgb(255, 255, 255);
+	width: 12rem;
+	display: inline-block;
+	padding-left: 15px;
+}
+
+nav .logo img {
+	/* width: 3rem; */
+	height: 2.3rem;
+}
+
+nav .logo:hover {
+	cursor: pointer;
+}
+
+/* Right Side */
+nav .menu {
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: 100%;
+	flex-direction: row-reverse;
+}
+
+/* Icon */
+/* Icon 1 */
+
+#nav-icon1 {
+	width: 60px;
+	height: 30px;
+	position: relative;
+	margin-left: 1rem;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
+
+#nav-icon1 span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 50%;
+	background: #ffffff;
+	border-radius: 2px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+	top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+	top: 10px;
+}
+
+#nav-icon1 span:nth-child(3) {
+	top: 20px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+	top: 10px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+	opacity: 0;
+	left: 60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+	top: 10px;
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.icon {
+	margin-right: 1rem;
+	height: 2.5rem;
+	width: 2.5rem;
+	/* transition: 1s; */
+	opacity: 1;
+	display: flex;
+	align-items: center;
+}
+.icon img {
+	width: 100%;
+}
+.icon:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
+.crossmark img {
+	height: 70%;
+	width: 70%;
+}
+
+.hidden {
+	/* display: none; */
+	opacity: 0;
+}
+.hidden:hover {
+	cursor: auto;
+	opacity: 0;
+}
+
+/* Content */
+.content {
+	height: 200vh;
+}
+
+/* Page Definition */
+.page.first {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+}
+
+.page.second {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+/* --- Background Image --- */
+.backgroundimage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 120vh;
+	width: 100vw;
+	background: linear-gradient(
+			0deg,
+			rgb(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.6) 20%,
+			rgba(0, 0, 0, 0.4) 100%
+		),
+		url('img/forestwallpaper.png');
+	background-position: left;
+	background-size: cover;
+}
+
+/* --- Title Image --- */
+.titleimage {
+	position: relative;
+	top: 30vh;
+	margin: 1.5rem auto;
+	width: 40vw;
+	height: 30vh;
+}
+.titleimage img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: block;
+}
+
+/* --- Separator Images --- */
+.firstseparator {
+	position: relative;
+	top: 37vh;
+	margin: 1.5rem auto;
+	width: 40vw;
+	height: 10vh;
+}
+.firstseparator img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	display: block;
+}
+
+/* --- Sections --- */
+.sections {
+	margin: 0 auto;
+	font-size: 2rem;
+	color: white;
+}
+
+.section-item {
+	margin: 4rem auto;
+	text-align: center;
+}
+
+.section-item:hover {
+	cursor: pointer;
+}
+
+.section-item:hover::before {
+	background-image: url('img/selector_l.png');
+	width: 35px;
+	height: 25px;
+	display: inline-block;
+	content: '';
+	background-size: 100%;
+}
+.section-item:hover::after {
+	background-image: url('img/selector_r.png');
+	width: 35px;
+	height: 25px;
+	display: inline-block;
+	content: '';
+	background-size: 100%;
+}
+
+@media (max-width: 992px) {
+	nav {
+		width: 80%;
+	}
+	.titleimage {
+		width: 70vw;
+	}
+}
+
+@media (max-width: 688px) {
+	nav {
+		width: 80%;
+	}
+	.menu {
+		display: flex;
+		flex-direction: column !important;
+		margin-top: 0.5rem;
+	}
+	.clicker-menu {
+		margin-bottom: 2.5rem;
+	}
+	.icon {
+		margin-top: 0.5rem;
+	}
+	.logo p {
+		display: none !important;
+	}
+	.titleimage {
+		width: 80vw;
+	}
+}
